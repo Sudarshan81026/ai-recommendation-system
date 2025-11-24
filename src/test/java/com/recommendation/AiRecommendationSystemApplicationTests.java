@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  class AiRecommendationSystemApplication {
     public static void main(String[] args) {
         SpringApplication.run(AiRecommendationSystemApplication.class, args);
+        //test
     }
 }
