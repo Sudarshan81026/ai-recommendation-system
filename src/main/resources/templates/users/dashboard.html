@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h2 { color: #2c3e50; }
+        nav a { margin-right: 18px; color: #2980b9; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .box { background: #f8f8f8; padding: 18px; border-radius: 6px; margin-bottom: 18px; }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/user/dashboard}">Dashboard</a>
+        <a th:href="@{/user/profile}">Profile</a>
+        <a th:href="@{/user/recommendations}">My Recommendations</a>
+        <a th:href="@{/logout}" style="color:#e74c3c;">Logout</a>
+    </nav>
+</header>
+<h2>User Dashboard</h2>
+<p>Welcome, <span th:text="${user.username}">User</span>!</p>
+
+<div class="box">
+    <h3>Your Personalized Recommendations</h3>
+    <ul>
+        <li th:each="prod : ${recommendations}">
+            <span th:text="${prod.name}"></span>
+            -
+            <span th:text="${prod.category != null ? prod.category.name : 'N/A'}"></span>
+        </li>
+    </ul>
+    <div th:if="${#lists.isEmpty(recommendations)}">No recommendations yet. Please complete your profile or interact more!</div>
+</div>
+
+<div class="box">
+    <h3>Account Actions</h3>
+    <ul>
+        <li><a th:href="@{/user/profile/edit}">Edit Profile</a></li>
+        <li><a th:href="@{/user/history}">View Activity History</a></li>
+    </ul>
+</div>
+</body>
+</html>

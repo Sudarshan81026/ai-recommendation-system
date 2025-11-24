@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        /* Simple styles for better readability */
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1, h2 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 90%; margin-bottom: 25px; }
+        th, td { border: 1px solid #888; padding: 8px 12px; text-align: left; }
+        th { background: #f2f2f2; }
+        a.button, input[type=submit] { padding: 6px 14px; background: #3498db; color: white; text-decoration: none; border-radius: 4px; border: none; }
+        a.button:hover, input[type=submit]:hover { background: #217dbb; }
+    </style>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<a href="/admin/user/add" class="button">+ Add New User</a>
+<br><br>
+
+<form action="/admin/user/search" method="get" style="margin-bottom: 20px;">
+    <input type="text" name="query" placeholder="Search by username, email..."/>
+    <input type="submit" value="Search"/>
+</form>
+
+<form action="/admin/user/bulkDelete" method="post">
+    <h2>All Users</h2>
+    <table>
+        <tr>
+            <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll(this)"/></th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td><input type="checkbox" name="userIds" th:value="${user.id}"/></td>
+            <td th:text="${user.id}"></td>
+            <td>
+                <a th:href="@{|/admin/user/view/${user.id}|}" th:text="${user.username}"></a>
+            </td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.role}"></td>
+            <td>
+                <a th:href="@{|/admin/user/edit/${user.id}|}" class="button">Edit</a>
+                <a th:href="@{|/admin/user/delete/${user.id}|}" class="button" style="background:#e74c3c;">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Delete Selected" style="background:#e74c3c;"/>
+</form>
+
+<script>
+    // Simple JS for bulk-select
+    function toggleSelectAll(source) {
+        checkboxes = document.getElementsByName('userIds');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
+</body>
+</html>
