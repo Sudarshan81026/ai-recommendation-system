@@ -1,0 +1,97 @@
+[33mcommit 26a8d728767736663b3af995f69b24ed4f561108[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: ad1c23d 0374f0b
+Author: sudarshan <sudarshan.24scse1420105@galgotiasuniversity.ac.in>
+Date:   Mon Nov 24 12:40:03 2025 +0530
+
+    first commit
+
+[33mcommit ad1c23d2c320ca710974227cc8102b631621549d[m
+Author: sudarshan <sudarshan.24scse1420105@galgotiasuniversity.ac.in>
+Date:   Mon Nov 24 11:54:21 2025 +0530
+
+    First commit
+
+ .../AiRecommendationSystemApplicationTests.java             | 13 [31m-------------[m
+ 1 file changed, 13 deletions(-)
+
+[33mcommit 0374f0bb674055eac283627e420b5c51d16f62b7[m
+Author: sudarshan <sudarshan.24scse1420105@galgotiasuniversity.ac.in>
+Date:   Mon Nov 24 11:54:21 2025 +0530
+
+    First commit
+
+ .../java/com/recommendation/AiRecommendationSystemApplicationTests.java | 2 [32m+[m[31m-[m
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[33mcommit 336baa8e5256e17f740f2a46e6aa9169049e7856[m
+Author: sudarshan <sudarshan.24scse1420105@galgotiasuniversity.ac.in>
+Date:   Mon Nov 24 11:49:49 2025 +0530
+
+    First commit
+
+ .../java/com/recommendation/AiRecommendationSystemApplicationTests.java  | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+
+[33mcommit c70e577405978b3f0b718d55f15d6fd887eec8d2[m
+Author: sudarshan <sudarshan.24scse1420105@galgotiasuniversity.ac.in>
+Date:   Mon Nov 24 11:29:35 2025 +0530
+
+    First commit
+
+ .../java/com/recommendation/AiRecommendationSystemApplicationTests.java  | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+
+[33mcommit 99d73d62547a027bb6de9e6e2d56e74e4f1a296d[m
+Author: sudarshan <sudarshan.24scse1420105@galgotiasuniversity.ac.in>
+Date:   Mon Nov 24 11:00:20 2025 +0530
+
+    First commit
+
+ .gitattributes                                     |   2 [32m+[m
+ .gitignore                                         |  33 [32m+++[m
+ .mvn/wrapper/maven-wrapper.properties              |   3 [32m+[m
+ mvnw                                               | 295 [32m+++++++++++++++++++++[m
+ mvnw.cmd                                           | 189 [32m+++++++++++++[m
+ pom.xml                                            |  71 [32m+++++[m
+ .../RecommendationSystemApplication.java           |  14 [32m+[m
+ .../com/recommendation/config/DataInitializer.java |  78 [32m++++++[m
+ .../com/recommendation/config/PasswordConfig.java  |  14 [32m+[m
+ .../com/recommendation/config/SecurityConfig.java  |  62 [32m+++++[m
+ .../recommendation/controller/AdminController.java |  80 [32m++++++[m
+ .../recommendation/controller/AuthController.java  |  35 [32m+++[m
+ .../recommendation/controller/PageController.java  |  29 [32m++[m
+ .../controller/RatingController.java               |  26 [32m++[m
+ .../controller/RecommendationController.java       |  21 [32m++[m
+ .../recommendation/controller/UserController.java  |  60 [32m+++++[m
+ .../java/com/recommendation/model/Category.java    |  38 [32m+++[m
+ .../java/com/recommendation/model/Product.java     |  49 [32m++++[m
+ src/main/java/com/recommendation/model/Rating.java |  58 [32m++++[m
+ .../com/recommendation/model/Recommendation.java   |  52 [32m++++[m
+ src/main/java/com/recommendation/model/User.java   |  61 [32m+++++[m
+ .../com/recommendation/model/UserActivity.java     |  50 [32m++++[m
+ .../repository/CategoryRepository.java             |   6 [32m+[m
+ .../repository/ProductRepository.java              |   6 [32m+[m
+ .../repository/RatingRepository.java               |   6 [32m+[m
+ .../repository/UserActivityRepository.java         |   6 [32m+[m
+ .../recommendation/repository/UserRepository.java  |   8 [32m+[m
+ .../recommendation/service/CustomUserDetails.java  |  53 [32m++++[m
+ .../service/CustomUserDetailsService.java          |  23 [32m++[m
+ .../com/recommendation/service/ProductService.java |  27 [32m++[m
+ .../com/recommendation/service/RatingService.java  |  23 [32m++[m
+ .../service/RecommendationService.java             |  35 [32m+++[m
+ .../com/recommendation/service/UserService.java    |  52 [32m++++[m
+ src/main/resources/application.properties          |  40 [32m+++[m
+ src/main/resources/templates/admin/dashboard.html  |  64 [32m+++++[m
+ src/main/resources/templates/admin/layout.html     |  27 [32m++[m
+ src/main/resources/templates/auth                  |   0
+ src/main/resources/templates/autho/login.html      |  32 [32m+++[m
+ src/main/resources/templates/autho/register.html   |  34 [32m+++[m
+ src/main/resources/templates/index.html            |  13 [32m+[m
+ src/main/resources/templates/user                  |   0
+ .../resources/templates/users/activityHistory.html |  10 [32m+[m
+ src/main/resources/templates/users/dashboard.html  |  45 [32m++++[m
+ .../resources/templates/users/editProfile.html     |  10 [32m+[m
+ src/main/resources/templates/users/profile.html    |  11 [32m+[m
+ .../resources/templates/users/recommendations.html |  11 [32m+[m
+ .../AiRecommendationSystemApplicationTests.java    |  11 [32m+[m
+ 47 files changed, 1873 insertions(+)
